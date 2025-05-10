@@ -48,3 +48,14 @@ type UserCredentials struct {
 	IDToken      string `json:"id_token"`
 	RefreshToken string `json:"RefreshToken"`
 }
+
+type SignUpInfo struct {
+	Username string `json:"username"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+type LoginInfo struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
