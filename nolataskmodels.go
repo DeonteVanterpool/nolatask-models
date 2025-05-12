@@ -22,6 +22,7 @@ type Task struct {
 }
 
 type AtomicTag struct {
+	ID          int       `json:"id"`
 	Pinned      int       `json:"pinned"`
 	Title       string    `json:"title"`
 	Description string    `json:"description"`
@@ -29,11 +30,14 @@ type AtomicTag struct {
 }
 
 type CompoundTag struct {
+	ID          int       `json:"id"`
 	Pinned      int       `json:"pinned"`
 	Title       string    `json:"title"`
 	Description string    `json:"description"`
 	CreatedAt   time.Time `json:"created_at"`
-	QueryString string    `json:"query_string"`
+
+	// original string that was used to represent the query
+	QueryString string `json:"query_string"`
 	// json for QueryAST
 	QueryAST string `json:"query_ast"`
 }
@@ -49,7 +53,7 @@ type UserCredentials struct {
 	RefreshToken string `json:"RefreshToken"`
 }
 
-type SignUpInfo struct {
+type SignupInfo struct {
 	Username string `json:"username"`
 	Email    string `json:"email"`
 	Password string `json:"password"`
